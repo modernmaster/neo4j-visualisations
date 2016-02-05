@@ -2,27 +2,26 @@ package uk.co.jamesmcguigan.aem.visualisation.repository;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.neo4j.graphdb.GraphDatabaseService;
-import uk.co.jamesmcguigan.aem.visualisation.repository.impl.GraphRepositoryImpl;
-import uk.co.jamesmcguigan.aem.visualisation.repository.model.CrxNode;
+import uk.co.jamesmcguigan.aem.visualisation.repository.impl.EntityRepositoryImpl;
+import uk.co.jamesmcguigan.aem.visualisation.repository.model.Component;
 
 public class GraphRepositoryTests {
 
     private String DB_PATH = "C:\\Users\\james.mcguigan\\Documents\\Neo4j\\default.graphdb";
-    private GraphRepository crxNodeGraphRepository;
+    private EntityRepository crxNodeEntityRepository;
 
-    @Before
-    public void setup() {
-        crxNodeGraphRepository = new GraphRepositoryImpl();
-    }
-
-    @Test
-    public void shouldDoSomething() {
-
-        CrxNode crx = new CrxNode("test");
-        GraphRepository crxNodeGraphRepository = new GraphRepositoryImpl();
-        crxNodeGraphRepository.createOrUpdate(crx);
-    }
+//    @Before
+//    public void setup() {
+//        crxNodeEntityRepository = new EntityRepositoryImpl();
+//    }
+//
+//    @Test
+//    public void shouldDoSomething() {
+//
+//        Component crx = new Component("test");
+//        EntityRepository crxNodeEntityRepository = new EntityRepositoryImpl();
+//        crxNodeEntityRepository.createOrUpdate(crx);
+//    }
 
 //    @Before
 //    public void setup() {

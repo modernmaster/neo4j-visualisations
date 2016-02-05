@@ -1,15 +1,27 @@
 package uk.co.jamesmcguigan.aem.visualisation.repository.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.neo4j.ogm.annotation.Relationship;
+
+import java.util.HashSet;
 
 public abstract class Entity {
 
     @JsonProperty("id")
-    private Long id;
+    protected Long id;
+    @JsonProperty("name")
+    public String name;
+
+    public String getName() {
+        return name;
+    }
 
     public Long getId() {
         return id;
     }
+
+    @Relationship(type= "TYPEOF",direction = Relationship.UNDIRECTED)
+    public java.util.Set<Component> resourceType = new HashSet<Component>();
 
     @Override
     public boolean equals(Object o) {

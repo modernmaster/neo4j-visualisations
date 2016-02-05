@@ -1,0 +1,4 @@
+MATCH (n:CrxNode{name:"cq:Component"})<-[:RESOURCETYPE] - (m:CrxNode) RETURN m,n LIMIT 500
+
+MATCH (n) DETACH
+DELETE n
