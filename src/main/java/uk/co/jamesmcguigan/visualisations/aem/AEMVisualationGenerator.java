@@ -4,6 +4,7 @@ package uk.co.jamesmcguigan.visualisations.aem;
 import uk.co.jamesmcguigan.visualisations.VisualisationGenerator;
 import uk.co.jamesmcguigan.visualisations.aem.repository.EntityRespositoryFactory;
 import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepository;
+import uk.co.jamesmcguigan.visualisations.aem.repository.PageRespository;
 import uk.co.jamesmcguigan.visualisations.infrastructure.EntityRepository;
 
 import javax.jcr.Node;
@@ -37,17 +38,22 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
 
             String primaryType = currentNode.getProperty(EntityFactory.JCR_PRIMARY_TYPE).getString();
             String resourceType = "";
-            try{
-                currentNode.getProperty(EntityFactory.SLING_RESOURCE_TYPE).getString();
-            }
-            catch(PathNotFoundException ignore){
+//            String resourceType = currentNode.getProperty(EntityFactory.SLING_RESOURCE_TYPE).getString();;
+//            try{
+//
+//            }
+//            catch(PathNotFoundException ignore){
+//
+//            }
+//            EntityRepository<Page> entityRepository = EntityRespositoryFactory.createEntityRepository(primaryType,resourceType);
 
-            }
-            EntityRepository<Component> entityRepository = EntityRespositoryFactory.createEntityRepository(primaryType,resourceType);
 
-            Component graphNode = entityRepository.find(currentNode.getName());
+            PageRespository pageRespository = new PageRespository();
+
+
+            Page graphNode = pageRespository.find(currentNode.getName());
             if(graphNode == null){
-                graphNode = entityRepository.createOrUpdate(EntityFactory.createEntity(currentNode));
+                graphNode = pageRespository.createOrUpdate(EntityFactory.createEntity(currentNode));
             }
 
             //addResourceType(currentNode,graphNode);
