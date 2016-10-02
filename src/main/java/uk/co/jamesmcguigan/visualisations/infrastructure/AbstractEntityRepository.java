@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisations.aem.repository;
+package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import org.neo4j.ogm.service.Components;
 import org.neo4j.ogm.session.Session;
@@ -11,14 +11,14 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-public abstract class EntityRepositoryImpl<T> implements EntityRepository<T> {
+public abstract class AbstractEntityRepository<T> {
 
     private static final int DEPTH_LIST = 0;
     private static final int DEPTH_ENTITY = 1;
     private Session session;
 
 
-    public EntityRepositoryImpl() {
+    public AbstractEntityRepository() {
         Components.configuration()
                 .driverConfiguration()
                 .setDriverClassName("org.neo4j.ogm.drivers.http.driver.HttpDriver")
@@ -26,11 +26,10 @@ public abstract class EntityRepositoryImpl<T> implements EntityRepository<T> {
         session = Neo4JSessionFactory.getInstance().getNeo4jSession();
     }
 
-    public T find(String name) {
+    public Entity find(String name) {
         try{
-        String query = String.format("Match(n:%s {name:\"%s\"})return n","Page", name);
-        Map<String, Object> result = new HashMap<String, Object>();
-        Iterator<T> n = session.query(getEntityType(),  query, Collections.EMPTY_MAP).iterator();
+        String query = String.format("Match(n:%s {name:\"%s\"})return n", getEntityType().getSimpleName(), name);
+        Iterator<Entity> n = session.query(getEntityType(),  query, Collections.EMPTY_MAP).iterator();
         return n.next();
         }
         catch(Exception ex){

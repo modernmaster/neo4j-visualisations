@@ -13,7 +13,6 @@ public class PageContent extends Entity {
         this.name = name;
     }
 
-    //template
     @Relationship(type= "ISTEMPLATEOF",direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> isTemplateOf = new HashSet<Component>();
 

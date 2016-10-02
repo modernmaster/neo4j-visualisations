@@ -1,10 +1,11 @@
 package uk.co.jamesmcguigan.visualisations.aem;
 
 import org.neo4j.ogm.annotation.Relationship;
+import uk.co.jamesmcguigan.visualisations.infrastructure.Entity;
 
 import java.util.HashSet;
 
-public class PageComponent extends PageContent {
+public class PageComponent extends Entity {
     public PageComponent(){}
 
     public PageComponent(String name) {

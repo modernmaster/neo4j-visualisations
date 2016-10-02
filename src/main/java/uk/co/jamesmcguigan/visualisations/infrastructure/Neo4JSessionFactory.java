@@ -5,7 +5,7 @@ import org.neo4j.ogm.session.SessionFactory;
 
 public class Neo4JSessionFactory {
 
-    private final static SessionFactory sessionFactory = new SessionFactory("uk.co.jamesmcguigan.aem.visualisation");
+    private final static SessionFactory sessionFactory = new SessionFactory("uk.co.jamesmcguigan.visualisations");
     private static Neo4JSessionFactory factory = new Neo4JSessionFactory();
 
     public static Neo4JSessionFactory getInstance() {

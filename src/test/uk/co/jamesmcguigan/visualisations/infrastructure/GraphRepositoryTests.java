@@ -3,7 +3,7 @@ package uk.co.jamesmcguigan.visualisations.infrastructure;
 import org.junit.Before;
 import org.junit.Test;
 import uk.co.jamesmcguigan.visualisations.aem.Component;
-import uk.co.jamesmcguigan.visualisations.aem.repository.ComponentRepository;
+import uk.co.jamesmcguigan.visualisations.aem.repository.PageRespository;
 
 public class GraphRepositoryTests {
 
@@ -12,14 +12,14 @@ public class GraphRepositoryTests {
 
     @Before
     public void setup() {
-//        crxNodeEntityRepository = new EntityRepositoryImpl();
+//        crxNodeEntityRepository = new AbstractEntityRepository();
     }
 
     @Test
     public void shouldDoSomething() {
 
         Component crx = new Component("test");
-        EntityRepository crxNodeEntityRepository = new ComponentRepository();
+        PageRespository crxNodeEntityRepository = new PageRespository();
         crxNodeEntityRepository.createOrUpdate(crx);
     }
 

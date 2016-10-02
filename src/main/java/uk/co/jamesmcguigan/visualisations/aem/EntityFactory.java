@@ -36,7 +36,7 @@ public class EntityFactory {
                 return new PageContent(node.getName());
 
             } else if (primaryType.equals(NT_UNSTRUCTURED)) {
-                if (resourceType != null) {
+                if (resourceType == null) {
                     return new PageComponent(node.getName());
                 }
                 return new Component(node.getName());

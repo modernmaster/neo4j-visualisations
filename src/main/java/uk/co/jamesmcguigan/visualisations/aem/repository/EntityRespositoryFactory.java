@@ -1,17 +1,17 @@
 package uk.co.jamesmcguigan.visualisations.aem.repository;
 
+import org.apache.commons.lang3.StringUtils;
 import uk.co.jamesmcguigan.visualisations.aem.EntityFactory;
-import uk.co.jamesmcguigan.visualisations.infrastructure.EntityRepository;
+import uk.co.jamesmcguigan.visualisations.infrastructure.AbstractEntityRepository;
 
 public class EntityRespositoryFactory {
 
-    private static EntityRepository pageRepository = new PageRespository();
-    private static EntityRepository pageContentRepository = new PageContentRespository();
-    private static EntityRepository pageComponentRepository = new PageComponentRepository();
-    private static EntityRepository componentRepository = new ComponentRepository();
+    private static PageRespository pageRepository = new PageRespository();
+    private static PageContentRespository pageContentRepository = new PageContentRespository();
+    private static PageComponentRepository pageComponentRepository = new PageComponentRepository();
+    private static ComponentRepository componentRepository = new ComponentRepository();
 
-    public static EntityRepository createEntityRepository(String primaryType, String resourceType){
-
+    public static AbstractEntityRepository createEntityRepository(String primaryType, String resourceType){
         if(primaryType.equals(EntityFactory.CQ_PAGE)){
             return pageRepository;
 
@@ -19,7 +19,7 @@ public class EntityRespositoryFactory {
             return pageContentRepository;
 
         }else if(primaryType.equals(EntityFactory.NT_UNSTRUCTURED)){
-            if(resourceType!=null   ){
+            if(!StringUtils.isEmpty(resourceType)){
                 return pageComponentRepository;
             }
         }
