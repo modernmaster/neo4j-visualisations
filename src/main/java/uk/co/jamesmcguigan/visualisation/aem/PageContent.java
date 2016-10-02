@@ -1,6 +1,8 @@
-package uk.co.jamesmcguigan.aem.visualisation.repository.model;
+package uk.co.jamesmcguigan.visualisation.aem;
 
 import org.neo4j.ogm.annotation.Relationship;
+import uk.co.jamesmcguigan.visualisation.aem.Component;
+import uk.co.jamesmcguigan.visualisation.infrastructure.Entity;
 
 import java.util.HashSet;
 

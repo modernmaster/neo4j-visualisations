@@ -1,14 +1,14 @@
-package uk.co.jamesmcguigan.aem.visualisation.factory;
+package uk.co.jamesmcguigan.visualisation.aem.repository;
 
-import uk.co.jamesmcguigan.aem.visualisation.repository.EntityRepository;
-import uk.co.jamesmcguigan.aem.visualisation.repository.impl.*;
+import uk.co.jamesmcguigan.visualisation.aem.EntityFactory;
+import uk.co.jamesmcguigan.visualisation.infrastructure.EntityRepository;
 
 public class EntityRespositoryFactory {
 
-    private static EntityRepository pageRepository = new PageRespositoryImpl();
-    private static EntityRepository pageContentRepository = new PageContentRespositoryImpl();
-    private static EntityRepository pageComponentRepository = new PageComponentRepositoryImpl();
-    private static EntityRepository componentRepository = new ComponentRepositoryImpl();
+    private static EntityRepository pageRepository = new PageRespository();
+    private static EntityRepository pageContentRepository = new PageContentRespository();
+    private static EntityRepository pageComponentRepository = new PageComponentRepository();
+    private static EntityRepository componentRepository = new ComponentRepository();
 
     public static EntityRepository createEntityRepository(String primaryType, String resourceType){
 

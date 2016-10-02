@@ -1,4 +1,6 @@
-package uk.co.jamesmcguigan.aem.visualisation.repository.model;
+package uk.co.jamesmcguigan.visualisation.aem;
+
+import uk.co.jamesmcguigan.visualisation.infrastructure.Entity;
 
 public class Page  extends Entity {
 

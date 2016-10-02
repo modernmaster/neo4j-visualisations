@@ -1,10 +1,10 @@
-package uk.co.jamesmcguigan.aem.visualisation.facade.impl;
+package uk.co.jamesmcguigan.visualisation.aem;
 
-import uk.co.jamesmcguigan.aem.visualisation.facade.CrxFacade;
-import uk.co.jamesmcguigan.aem.visualisation.factory.EntityFactory;
-import uk.co.jamesmcguigan.aem.visualisation.factory.EntityRespositoryFactory;
-import uk.co.jamesmcguigan.aem.visualisation.repository.CrxRepository;
-import uk.co.jamesmcguigan.aem.visualisation.repository.EntityRepository;
+
+import uk.co.jamesmcguigan.visualisation.VisualisationGenerator;
+import uk.co.jamesmcguigan.visualisation.aem.repository.EntityRespositoryFactory;
+import uk.co.jamesmcguigan.visualisation.aem.repository.ContentRepository;
+import uk.co.jamesmcguigan.visualisation.infrastructure.EntityRepository;
 
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;
@@ -13,30 +13,29 @@ import javax.jcr.RepositoryException;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class CrxFacadeImpl implements CrxFacade {
+public class AEMVisualationGenerator implements VisualisationGenerator {
 
     private Queue<Node> nodeQueue;
-    private CrxRepository crxRepository;
+    private ContentRepository contentRepository;
     private final static String CQ_TEMPLATE = "cq:template";
     private String ROOT_PATH = "/content/moneysupermarket/en_gb/insurance/car-insurance/question-set/results";
 //private String ROOT_PATH = "/apps/";
 
-    public CrxFacadeImpl(CrxRepository crxRepository) {
-        this.crxRepository = crxRepository;
+    public AEMVisualationGenerator(ContentRepository contentRepository) {
+        this.contentRepository = contentRepository;
         this.nodeQueue = new LinkedList<Node>();
     }
 
-    @Override
-    public void createCrxRepresentation() throws RepositoryException {
+    public void create() throws RepositoryException {
 
-        crxRepository.createSession();
-        Node rootNode = crxRepository.getNode(ROOT_PATH);
+        contentRepository.createSession();
+        Node rootNode = contentRepository.getNode(ROOT_PATH);
         nodeQueue.add(rootNode);
 
         while(nodeQueue.peek()!=null) {
             Node currentNode = nodeQueue.remove();
 
-            String primaryType = currentNode.getProperty(EntityFactory.JCR_PrimaryType).getString();
+            String primaryType = currentNode.getProperty(EntityFactory.JCR_PRIMARY_TYPE).getString();
             String resourceType = "";
             try{
                 currentNode.getProperty(EntityFactory.SLING_RESOURCE_TYPE).getString();
@@ -44,15 +43,14 @@ public class CrxFacadeImpl implements CrxFacade {
             catch(PathNotFoundException ignore){
 
             }
-            EntityRepository entityRepository = EntityRespositoryFactory.createEntityRepository(primaryType,resourceType);
+            EntityRepository<Component> entityRepository = EntityRespositoryFactory.createEntityRepository(primaryType,resourceType);
 
-            Object graphNode = entityRepository.find(currentNode.getName());
+            Component graphNode = entityRepository.find(currentNode.getName());
             if(graphNode == null){
                 graphNode = entityRepository.createOrUpdate(EntityFactory.createEntity(currentNode));
             }
 
-//            addResourceType(currentNode,graphNode);
-//            this.entityRepository.createOrUpdate(graphNode);
+            //addResourceType(currentNode,graphNode);
 
             NodeIterator nodeIterator = currentNode.getNodes();
             while(nodeIterator.hasNext()) {
@@ -63,7 +61,7 @@ public class CrxFacadeImpl implements CrxFacade {
 
 //    private void addResourceType(Node jcrNode, Component graphNode) {
 //        try {
-//            Property property = jcrNode.getProperty(JCR_PRIMARYTYPE);
+//            Property property = jcrNode.getProperty(EntityFactory.JCR_PRIMARY_TYPE);
 //            Component resourceType = entityRepository.find(property.getString());
 //            if(resourceType==null){
 //                resourceType = entityRepository.createOrUpdate(new Component(property.getString()));

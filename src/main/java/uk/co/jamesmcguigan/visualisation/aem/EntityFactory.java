@@ -1,6 +1,6 @@
-package uk.co.jamesmcguigan.aem.visualisation.factory;
+package uk.co.jamesmcguigan.visualisation.aem;
 
-import uk.co.jamesmcguigan.aem.visualisation.repository.model.*;
+import uk.co.jamesmcguigan.visualisation.infrastructure.Entity;
 
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;
@@ -12,7 +12,7 @@ public class EntityFactory {
     public final static String CQ_PAGE_CONTENT = "cq:PageContent";
     public final static String CQ_PAGE = "cq:Page";
     public final static String SLING_RESOURCE_TYPE = "sling:resourceType";
-    public final static String JCR_PrimaryType = "jcr:primaryType";
+    public final static String JCR_PRIMARY_TYPE = "jcr:primaryType";
     public final static String NT_UNSTRUCTURED = "nt:unstructured";
 
     public static Entity createEntity(Node node) {
@@ -21,15 +21,14 @@ public class EntityFactory {
         try {
             resourceType = node.getProperty(SLING_RESOURCE_TYPE).getString();
         } catch (PathNotFoundException ignored) {
-                    }
-        catch (ValueFormatException e) {
+        } catch (ValueFormatException e) {
             e.printStackTrace();
         } catch (RepositoryException e) {
             e.printStackTrace();
         }
 
-        try{
-            String primaryType = node.getProperty(JCR_PrimaryType).getString();
+        try {
+            String primaryType = node.getProperty(JCR_PRIMARY_TYPE).getString();
             if (primaryType.equals(CQ_PAGE)) {
                 return new Page(node.getName());
 
@@ -42,8 +41,7 @@ public class EntityFactory {
                 }
                 return new Component(node.getName());
             }
-        }
-        catch(Exception ignored){
+        } catch (Exception ignored) {
 
         }
         return null;
