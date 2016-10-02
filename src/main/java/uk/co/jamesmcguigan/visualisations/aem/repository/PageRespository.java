@@ -1,6 +1,6 @@
-package uk.co.jamesmcguigan.visualisation.aem.repository;
+package uk.co.jamesmcguigan.visualisations.aem.repository;
 
-import uk.co.jamesmcguigan.visualisation.aem.Page;
+import uk.co.jamesmcguigan.visualisations.aem.Page;
 
 public class PageRespository extends EntityRepositoryImpl<Page> {
 

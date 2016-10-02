@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisation.aem.repository;
+package uk.co.jamesmcguigan.visualisations.aem.repository;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;

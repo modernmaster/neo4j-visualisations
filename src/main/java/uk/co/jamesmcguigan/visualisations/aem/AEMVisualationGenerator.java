@@ -1,10 +1,10 @@
-package uk.co.jamesmcguigan.visualisation.aem;
+package uk.co.jamesmcguigan.visualisations.aem;
 
 
-import uk.co.jamesmcguigan.visualisation.VisualisationGenerator;
-import uk.co.jamesmcguigan.visualisation.aem.repository.EntityRespositoryFactory;
-import uk.co.jamesmcguigan.visualisation.aem.repository.ContentRepository;
-import uk.co.jamesmcguigan.visualisation.infrastructure.EntityRepository;
+import uk.co.jamesmcguigan.visualisations.VisualisationGenerator;
+import uk.co.jamesmcguigan.visualisations.aem.repository.EntityRespositoryFactory;
+import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepository;
+import uk.co.jamesmcguigan.visualisations.infrastructure.EntityRepository;
 
 import javax.jcr.Node;
 import javax.jcr.NodeIterator;

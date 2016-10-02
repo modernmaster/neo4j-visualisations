@@ -1,9 +1,9 @@
-package uk.co.jamesmcguigan.visualisation.aem;
+package uk.co.jamesmcguigan.visualisations.aem;
 
 import org.junit.Test;
-import uk.co.jamesmcguigan.visualisation.VisualisationGenerator;
-import uk.co.jamesmcguigan.visualisation.aem.repository.ContentRepository;
-import uk.co.jamesmcguigan.visualisation.aem.repository.ContentRepositoryImpl;
+import uk.co.jamesmcguigan.visualisations.VisualisationGenerator;
+import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepository;
+import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepositoryImpl;
 
 import javax.jcr.RepositoryException;
 

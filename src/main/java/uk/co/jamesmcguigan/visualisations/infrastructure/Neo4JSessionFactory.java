@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisation.infrastructure;
+package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import org.neo4j.ogm.session.Session;
 import org.neo4j.ogm.session.SessionFactory;

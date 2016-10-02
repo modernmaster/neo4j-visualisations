@@ -1,6 +1,6 @@
-package uk.co.jamesmcguigan.visualisation.aem;
+package uk.co.jamesmcguigan.visualisations.aem;
 
-import uk.co.jamesmcguigan.visualisation.infrastructure.Entity;
+import uk.co.jamesmcguigan.visualisations.infrastructure.Entity;
 
 import javax.jcr.Node;
 import javax.jcr.PathNotFoundException;

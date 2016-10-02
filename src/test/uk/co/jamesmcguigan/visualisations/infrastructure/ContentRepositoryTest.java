@@ -1,9 +1,9 @@
-package uk.co.jamesmcguigan.visualisation.infrastructure;
+package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import org.junit.Before;
 import org.junit.Test;
-import uk.co.jamesmcguigan.visualisation.aem.repository.ContentRepository;
-import uk.co.jamesmcguigan.visualisation.aem.repository.ContentRepositoryImpl;
+import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepository;
+import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepositoryImpl;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;

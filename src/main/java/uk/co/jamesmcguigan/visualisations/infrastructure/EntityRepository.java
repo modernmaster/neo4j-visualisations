@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisation.infrastructure;
+package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 public interface EntityRepository<T> {
 

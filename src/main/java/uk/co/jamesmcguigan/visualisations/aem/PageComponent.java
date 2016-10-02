@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisation.aem;
+package uk.co.jamesmcguigan.visualisations.aem;
 
 import org.neo4j.ogm.annotation.Relationship;
 

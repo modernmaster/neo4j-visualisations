@@ -1,10 +1,10 @@
-package uk.co.jamesmcguigan.visualisation.aem.repository;
+package uk.co.jamesmcguigan.visualisations.aem.repository;
 
 import org.neo4j.ogm.service.Components;
 import org.neo4j.ogm.session.Session;
-import uk.co.jamesmcguigan.visualisation.infrastructure.Entity;
-import uk.co.jamesmcguigan.visualisation.infrastructure.EntityRepository;
-import uk.co.jamesmcguigan.visualisation.infrastructure.Neo4JSessionFactory;
+import uk.co.jamesmcguigan.visualisations.infrastructure.Entity;
+import uk.co.jamesmcguigan.visualisations.infrastructure.EntityRepository;
+import uk.co.jamesmcguigan.visualisations.infrastructure.Neo4JSessionFactory;
 
 import java.util.Collections;
 import java.util.HashMap;

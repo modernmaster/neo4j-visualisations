@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisation.aem.repository;
+package uk.co.jamesmcguigan.visualisations.aem.repository;
 
 import org.apache.jackrabbit.commons.JcrUtils;
 

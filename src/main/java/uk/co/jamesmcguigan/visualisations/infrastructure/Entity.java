@@ -1,8 +1,8 @@
-package uk.co.jamesmcguigan.visualisation.infrastructure;
+package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.neo4j.ogm.annotation.Relationship;
-import uk.co.jamesmcguigan.visualisation.aem.Component;
+import uk.co.jamesmcguigan.visualisations.aem.Component;
 
 import java.util.HashSet;
 

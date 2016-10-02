@@ -1,4 +1,4 @@
-package uk.co.jamesmcguigan.visualisation;
+package uk.co.jamesmcguigan.visualisations;
 
 import javax.jcr.RepositoryException;
 

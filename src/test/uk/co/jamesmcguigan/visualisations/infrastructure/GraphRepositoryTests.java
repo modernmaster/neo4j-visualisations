@@ -1,12 +1,9 @@
-package uk.co.jamesmcguigan.visualisation.infrastructure;
+package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.neo4j.graphdb.GraphDatabaseService;
-import org.neo4j.graphdb.factory.GraphDatabaseFactory;
-import uk.co.jamesmcguigan.visualisation.aem.Component;
-import uk.co.jamesmcguigan.visualisation.aem.repository.ComponentRepository;
-import uk.co.jamesmcguigan.visualisation.aem.repository.EntityRepositoryImpl;
+import uk.co.jamesmcguigan.visualisations.aem.Component;
+import uk.co.jamesmcguigan.visualisations.aem.repository.ComponentRepository;
 
 public class GraphRepositoryTests {
 
