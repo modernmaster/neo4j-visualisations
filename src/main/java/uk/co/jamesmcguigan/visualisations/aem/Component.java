@@ -12,7 +12,7 @@ public class Component extends Entity {
     public Component() {
     }
 
-    public Component(String name) {
+    public Component(final String name) {
         this.name = name;
         isMemberOf = new HashSet<Component>();
     }

@@ -9,15 +9,15 @@ public class PageContent extends Entity {
 
     public PageContent(){}
 
-    public PageContent(String name) {
+    public PageContent(final String name) {
         this.name = name;
     }
 
-    @Relationship(type= "ISTEMPLATEOF",direction = Relationship.UNDIRECTED)
+    @Relationship(type = "ISTEMPLATEOF", direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> isTemplateOf = new HashSet<Component>();
 
     //resourceType
-    @Relationship(type= "INHERITS",direction = Relationship.UNDIRECTED)
+    @Relationship(type = "INHERITS", direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> inherits = new HashSet<Component>();
 
 }

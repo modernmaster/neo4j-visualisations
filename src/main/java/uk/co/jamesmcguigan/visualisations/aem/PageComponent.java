@@ -8,12 +8,12 @@ import java.util.HashSet;
 public class PageComponent extends Entity {
     public PageComponent(){}
 
-    public PageComponent(String name) {
+    public PageComponent(final String name) {
         this.name = name;
     }
 
     //resourceType
-    @Relationship(type= "INHERITS",direction = Relationship.UNDIRECTED)
+    @Relationship(type = "INHERITS", direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> inherits = new HashSet<Component>();
 
 }

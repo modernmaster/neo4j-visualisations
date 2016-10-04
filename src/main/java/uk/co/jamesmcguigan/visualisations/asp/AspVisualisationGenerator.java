@@ -1,7 +1,6 @@
 package uk.co.jamesmcguigan.visualisations.asp;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.filefilter.RegexFileFilter;
 import uk.co.jamesmcguigan.visualisations.VisualisationGenerator;
 import uk.co.jamesmcguigan.visualisations.aem.EntityFactory;
 import uk.co.jamesmcguigan.visualisations.infrastructure.AbstractEntityRepository;
@@ -21,15 +20,11 @@ import java.util.regex.Pattern;
 
 public class AspVisualisationGenerator implements VisualisationGenerator {
 
-    public void AspVisualisationGenerator() {
-
-    }
-
     public void create() {
-        File dir = new File("C:\\code\\travelinsurance\\src\\main\\admin_classic_asp\\");
-        Collection<File> files = FileUtils.listFiles(dir, new String[]{"asp"}, true);
+        final File dir = new File("C:\\code\\travelinsurance\\src\\main\\admin_classic_asp\\");
+        final Collection<File> files = FileUtils.listFiles(dir, new String[]{"asp"}, true);
 
-        for(File file: files) {
+        for (File file : files) {
             try {
                 List<String> contents;
                 try {
@@ -38,12 +33,12 @@ public class AspVisualisationGenerator implements VisualisationGenerator {
                     contents = Files.readAllLines(file.toPath(), Charset.forName("iso-8859-1"));
                 }
 
-                for(String content: contents) {
+                for (String content : contents) {
                     //<!--#include file="../inc/msaldboc.asp"-->
                     //last index
                     Pattern p = Pattern.compile("<!--#include file=\"[\\./]*(.*)\"-->");
                     Matcher m = p.matcher(content);
-                    if(m.find()) {
+                    if (m.find()) {
                         String filename = m.group();
                         System.out.println(filename);
                     }
@@ -54,10 +49,10 @@ public class AspVisualisationGenerator implements VisualisationGenerator {
         }
     }
 
-    private Entity addCurrentNode(Node currentNode, AbstractEntityRepository entityRepository) throws RepositoryException {
+    private Entity addCurrentNode(final Node currentNode, final AbstractEntityRepository entityRepository) throws RepositoryException {
         Entity entity = entityRepository.find(currentNode.getName());
         if (entity == null) {
-            entity = (Entity)entityRepository.createOrUpdate(EntityFactory.createEntity(currentNode));
+            entity = (Entity) entityRepository.createOrUpdate(EntityFactory.createEntity(currentNode));
         }
         return entity;
     }

@@ -11,15 +11,18 @@ public class EntityRespositoryFactory {
     private static PageComponentRepository pageComponentRepository = new PageComponentRepository();
     private static ComponentRepository componentRepository = new ComponentRepository();
 
-    public static AbstractEntityRepository createEntityRepository(String primaryType, String resourceType){
-        if(primaryType.equals(EntityFactory.CQ_PAGE)){
+    private EntityRespositoryFactory() {
+    }
+
+    public static AbstractEntityRepository createEntityRepository(final String primaryType, final String resourceType) {
+        if (primaryType.equals(EntityFactory.CQ_PAGE)) {
             return pageRepository;
 
-        }else if(primaryType.equals(EntityFactory.CQ_PAGE_CONTENT)){
+        } else if (primaryType.equals(EntityFactory.CQ_PAGE_CONTENT)) {
             return pageContentRepository;
 
-        }else if(primaryType.equals(EntityFactory.NT_UNSTRUCTURED)){
-            if(!StringUtils.isEmpty(resourceType)){
+        } else if (primaryType.equals(EntityFactory.NT_UNSTRUCTURED)) {
+            if (!StringUtils.isEmpty(resourceType)) {
                 return pageComponentRepository;
             }
         }

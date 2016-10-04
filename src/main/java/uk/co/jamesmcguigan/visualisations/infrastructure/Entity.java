@@ -8,10 +8,12 @@ import java.util.HashSet;
 
 public abstract class Entity {
 
-    @JsonProperty("id")
-    protected Long id;
     @JsonProperty("name")
     public String name;
+    @Relationship(type = "TYPEOF", direction = Relationship.UNDIRECTED)
+    public java.util.Set<Component> resourceType = new HashSet<Component>();
+    @JsonProperty("id")
+    protected Long id;
 
     public String getName() {
         return name;
@@ -21,23 +23,26 @@ public abstract class Entity {
         return id;
     }
 
-    @Relationship(type= "TYPEOF",direction = Relationship.UNDIRECTED)
-    public java.util.Set<Component> resourceType = new HashSet<Component>();
-
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || id == null || getClass() != o.getClass()) return false;
-
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || id == null || getClass() != o.getClass()) {
+            return false;
+        }
         Entity entity = (Entity) o;
-
-        if (!id.equals(entity.id)) return false;
-
+        if (!id.equals(entity.id)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public int hashCode() {
-        return (id == null) ? -1 : id.hashCode();
+        if (id == null) {
+            return -1;
+        }
+        return id.hashCode();
     }
 }
