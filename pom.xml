@@ -9,10 +9,10 @@
     <version>1.0-SNAPSHOT</version>
 
     <repositories>
-        <repository>
-            <id>maven-central</id>
-            <url>http://repo1.maven.org/maven2/</url>
-        </repository>
+        <!--<repository>-->
+            <!--<id>maven-central</id>-->
+            <!--<url>http://repo1.maven.org/maven2/</url>-->
+        <!--</repository>-->
         <repository>
             <id>adobe-releases</id>
             <url>http://repo.adobe.com/nexus/content/groups/public/</url>
