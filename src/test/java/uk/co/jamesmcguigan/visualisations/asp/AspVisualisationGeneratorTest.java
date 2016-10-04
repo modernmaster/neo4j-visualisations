@@ -9,21 +9,17 @@ import uk.co.jamesmcguigan.visualisations.infrastructure.AbstractEntityRepositor
 public class AspVisualisationGeneratorTest {
 
     private AspVisualisationGenerator aspVisualisationGenerator;
-    private String location;
+    private String location = "C:\\code\\travelinsurance\\src\\main\\admin_classic_asp";
     @Mock
     private AbstractEntityRepository pageRepository;
 
     @Before
     public void setUp() {
-        aspVisualisationGenerator = new AspVisualisationGenerator(location);
+        aspVisualisationGenerator = new AspVisualisationGenerator();
     }
 
     @Test
     public void doSOmething() {
-        when(pageRepository.createOrUpdate(entity));
-
-
-
-        aspVisualisationGenerator.create();
+        aspVisualisationGenerator.create(location);
     }
 }

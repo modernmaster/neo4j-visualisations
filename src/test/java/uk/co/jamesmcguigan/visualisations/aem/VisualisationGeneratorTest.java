@@ -13,7 +13,7 @@ public class VisualisationGeneratorTest {
     public void shouldTraverseCrxStructure() throws RepositoryException {
         ContentRepository contentRepository = new ContentRepositoryImpl();
         VisualisationGenerator crxFacade = new AEMVisualationGenerator(contentRepository);
-        crxFacade.create();
+//        crxFacade.create();
     }
 
 
