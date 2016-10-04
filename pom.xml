@@ -10,13 +10,12 @@
 
     <repositories>
         <repository>
-            <id>adobe-releases</id>
-            <url>http://repo.adobe.com/nexus/content/groups/public/</url>
-        </repository>
-
-        <repository>
             <id>maven-central</id>
             <url>http://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>adobe-releases</id>
+            <url>http://repo.adobe.com/nexus/content/groups/public/</url>
         </repository>
     </repositories>
 
@@ -47,11 +46,11 @@
             <version>2.0.0-M01</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.neo4j</groupId>
-            <artifactId>neo4j-ogm</artifactId>
-            <version>2.0.0-M01</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.neo4j</groupId>-->
+            <!--<artifactId>neo4j-ogm</artifactId>-->
+            <!--<version>2.0.0-M01</version>-->
+        <!--</dependency>-->
 
         <!--<dependency>-->
             <!--<groupId>org.springframework.data</groupId>-->
@@ -90,11 +89,11 @@
             <version>2.4.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>2.6.2</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.logging.log4j</groupId>-->
+            <!--<artifactId>log4j</artifactId>-->
+            <!--<version>2.6.2</version>-->
+        <!--</dependency>-->
 
         <!-- test -->
 

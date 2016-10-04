@@ -9,6 +9,7 @@ import javax.jcr.RepositoryException;
 
 public class VisualisationGeneratorTest {
 
+    @Ignore
     @Test
     public void shouldTraverseCrxStructure() throws RepositoryException {
         ContentRepository contentRepository = new ContentRepositoryImpl();

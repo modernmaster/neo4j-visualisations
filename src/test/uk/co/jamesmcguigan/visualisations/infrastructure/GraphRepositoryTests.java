@@ -16,6 +16,7 @@ public class GraphRepositoryTests {
     }
 
     @Test
+    @Ignore
     public void shouldDoSomething() {
 
         Component crx = new Component("test");

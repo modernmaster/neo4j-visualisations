@@ -13,6 +13,7 @@ public class AspVisualisationGeneratorTest {
     }
 
     @Test
+    @Ignore
     public void doSOmething() {
         aspVisualisationGenerator.create();
     }
