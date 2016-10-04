@@ -1,5 +1,6 @@
 package uk.co.jamesmcguigan.visualisations.aem;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import uk.co.jamesmcguigan.visualisations.VisualisationGenerator;
 import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepository;
