@@ -16,7 +16,6 @@ public class PageContent extends Entity {
     @Relationship(type= "ISTEMPLATEOF",direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> isTemplateOf = new HashSet<Component>();
 
-    //resourceType
     @Relationship(type= "INHERITS",direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> inherits = new HashSet<Component>();
 

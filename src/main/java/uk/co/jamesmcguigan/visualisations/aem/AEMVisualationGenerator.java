@@ -25,16 +25,15 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
     private Queue<Node> nodeQueue;
     private ContentRepository contentRepository;
     private final static String CQ_TEMPLATE = "cq:template";
-    private String ROOT_PATH = "/content/moneysupermarket/en_gb/insurance/car-insurance/question-set/results";
-//private String ROOT_PATH = "/apps/";
+    private String location;
 
     public AEMVisualationGenerator(ContentRepository contentRepository) {
         this.contentRepository = contentRepository;
         this.nodeQueue = new LinkedList<Node>();
     }
 
-    public void create() {
-
+    public void create(final String location) {
+        this.location = location;
         Node rootNode = getRootNode();
         nodeQueue.add(rootNode);
 
@@ -67,7 +66,7 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
     private Node getRootNode() {
         try {
             contentRepository.createSession();
-            return contentRepository.getNode(ROOT_PATH);
+            return contentRepository.getNode(location);
         } catch (RepositoryException e) {
             LOGGER.error(UNABLE_TO_ACCESS_ROOT_PATH, e);
         }

@@ -12,7 +12,6 @@ public class PageComponent extends Entity {
         this.name = name;
     }
 
-    //resourceType
     @Relationship(type= "INHERITS",direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> inherits = new HashSet<Component>();
 

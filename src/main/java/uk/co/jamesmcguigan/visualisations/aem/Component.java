@@ -17,7 +17,6 @@ public class Component extends Entity {
         isMemberOf = new HashSet<Component>();
     }
 
-    //resourceSuperType
     @Relationship(type = "INHERITS", direction = Relationship.UNDIRECTED)
     public java.util.Set<Component> isMemberOf = new HashSet<Component>();
 }
