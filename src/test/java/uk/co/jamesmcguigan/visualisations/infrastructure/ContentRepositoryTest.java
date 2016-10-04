@@ -1,6 +1,7 @@
 package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepository;
 import uk.co.jamesmcguigan.visualisations.aem.repository.ContentRepositoryImpl;
@@ -21,6 +22,7 @@ public class ContentRepositoryTest {
     }
 
     @Test
+    @Ignore
     public void testWillGetNode() throws RepositoryException {
         String path = "/content";
         Node requestedNode = contentRepository.getNode(path);

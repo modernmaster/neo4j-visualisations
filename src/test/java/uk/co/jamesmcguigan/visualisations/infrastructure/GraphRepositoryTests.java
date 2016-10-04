@@ -1,6 +1,7 @@
 package uk.co.jamesmcguigan.visualisations.infrastructure;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import uk.co.jamesmcguigan.visualisations.aem.Component;
 import uk.co.jamesmcguigan.visualisations.aem.repository.PageRespository;
@@ -16,6 +17,7 @@ public class GraphRepositoryTests {
     }
 
     @Test
+    @Ignore
     public void shouldDoSomething() {
 
         Component crx = new Component("test");

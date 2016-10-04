@@ -1,6 +1,7 @@
 package uk.co.jamesmcguigan.visualisations.asp;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class AspVisualisationGeneratorTest {
@@ -13,6 +14,7 @@ public class AspVisualisationGeneratorTest {
     }
 
     @Test
+    @Ignore
     public void doSOmething() {
         aspVisualisationGenerator.create();
     }
