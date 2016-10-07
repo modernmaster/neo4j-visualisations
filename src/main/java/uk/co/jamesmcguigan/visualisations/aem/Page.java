@@ -6,7 +6,7 @@ public class Page  extends Entity {
 
     public Page(){}
 
-    public Page(String name) {
+    public Page(final String name) {
         this.name = name;
     }
 }

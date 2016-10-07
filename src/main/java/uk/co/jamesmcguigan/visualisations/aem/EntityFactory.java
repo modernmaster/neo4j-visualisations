@@ -9,13 +9,15 @@ import javax.jcr.ValueFormatException;
 
 public class EntityFactory {
 
-    public final static String CQ_PAGE_CONTENT = "cq:PageContent";
-    public final static String CQ_PAGE = "cq:Page";
-    public final static String SLING_RESOURCE_TYPE = "sling:resourceType";
-    public final static String JCR_PRIMARY_TYPE = "jcr:primaryType";
-    public final static String NT_UNSTRUCTURED = "nt:unstructured";
+    public static final String CQ_PAGE_CONTENT = "cq:PageContent";
+    public static final String CQ_PAGE = "cq:Page";
+    public static final String SLING_RESOURCE_TYPE = "sling:resourceType";
+    public static final String JCR_PRIMARY_TYPE = "jcr:primaryType";
+    public static final String NT_UNSTRUCTURED = "nt:unstructured";
 
-    public static Entity createEntity(Node node) {
+    private EntityFactory() {}
+
+    public static Entity createEntity(final Node node) {
 
         String resourceType = "";
         try {

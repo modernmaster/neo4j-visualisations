@@ -17,18 +17,18 @@ import java.util.Queue;
 
 public class AEMVisualationGenerator implements VisualisationGenerator {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(AEMVisualationGenerator.class);
-    private static final String UNABLE_TO_ACCESS_REPOSITORY = "Unable to access repository";
-    private static final String UNABLE_TO_ACCESS_ROOT_PATH = "Unable to access root path";
     public static final String UNABLE_TO_ADD_RESOURCE_TYPE = "Unable to add resource type";
     public static final String EMPTY_STRING = "";
+    private static final Logger LOGGER = LoggerFactory.getLogger(AEMVisualationGenerator.class);
+    private static final String UNABLE_TO_ACCESS_REPOSITORY = "Unable to access repository";
+    private static final String UNABLE_TO_ACCESS_ROOT_PATH = "Unable to access root path";
+    private static final String CQ_TEMPLATE = "cq:template";
+    private static final String ROOT_PATH = "/content/moneysupermarket/en_gb/insurance/car-insurance/question-set/results";
     private Queue<Node> nodeQueue;
     private ContentRepository contentRepository;
-    private final static String CQ_TEMPLATE = "cq:template";
-    private String ROOT_PATH = "/content/moneysupermarket/en_gb/insurance/car-insurance/question-set/results";
 //private String ROOT_PATH = "/apps/";
 
-    public AEMVisualationGenerator(ContentRepository contentRepository) {
+    public AEMVisualationGenerator(final ContentRepository contentRepository) {
         this.contentRepository = contentRepository;
         this.nodeQueue = new LinkedList<Node>();
     }
@@ -43,7 +43,7 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
             try {
                 AbstractEntityRepository entityRepository = createEntityRepository(currentNode);
                 Entity entity = addCurrentNode(currentNode, entityRepository);
-                addResourceType(currentNode,entity,entityRepository);
+                addResourceType(currentNode, entity, entityRepository);
 //                addTemplate(Node jcrNode, Component graphNode)
 
                 NodeIterator nodeIterator = currentNode.getNodes();
@@ -56,10 +56,10 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
         }
     }
 
-    private Entity addCurrentNode(Node currentNode, AbstractEntityRepository entityRepository) throws RepositoryException {
+    private Entity addCurrentNode(final Node currentNode, final AbstractEntityRepository entityRepository) throws RepositoryException {
         Entity entity = entityRepository.find(currentNode.getName());
         if (entity == null) {
-            entity = (Entity)entityRepository.createOrUpdate(EntityFactory.createEntity(currentNode));
+            entity = (Entity) entityRepository.createOrUpdate(EntityFactory.createEntity(currentNode));
         }
         return entity;
     }
@@ -74,26 +74,26 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
         return null;
     }
 
-    private AbstractEntityRepository createEntityRepository(Node currentNode) throws RepositoryException {
+    private AbstractEntityRepository createEntityRepository(final Node currentNode) throws RepositoryException {
         String primaryType = currentNode.getProperty(EntityFactory.JCR_PRIMARY_TYPE).getString();
         String resourceType;
-        if(!currentNode.hasProperty(EntityFactory.SLING_RESOURCE_TYPE)) {
+        if (!currentNode.hasProperty(EntityFactory.SLING_RESOURCE_TYPE)) {
             return EntityRespositoryFactory.createEntityRepository(primaryType, EMPTY_STRING);
         }
         resourceType = currentNode.getProperty(EntityFactory.SLING_RESOURCE_TYPE).getString();
         return EntityRespositoryFactory.createEntityRepository(primaryType, resourceType);
     }
 
-    private void addResourceType(Node currentNode, Entity graphNode, AbstractEntityRepository entityRepository) {
+    private void addResourceType(final Node currentNode, final Entity graphNode, final AbstractEntityRepository entityRepository) {
         try {
-            if(!currentNode.hasProperty(EntityFactory.SLING_RESOURCE_TYPE)){
+            if (!currentNode.hasProperty(EntityFactory.SLING_RESOURCE_TYPE)) {
                 return;
             }
             AbstractEntityRepository componentRepository = EntityRespositoryFactory.createEntityRepository(EntityFactory.NT_UNSTRUCTURED, "");
             Property property = currentNode.getProperty(EntityFactory.SLING_RESOURCE_TYPE);
-            Component resourceType = (Component)componentRepository.find(property.getString());
-            if(resourceType==null){
-                resourceType = (Component)componentRepository.createOrUpdate(new Component(property.getString()));
+            Component resourceType = (Component) componentRepository.find(property.getString());
+            if (resourceType == null) {
+                resourceType = (Component) componentRepository.createOrUpdate(new Component(property.getString()));
             }
             graphNode.resourceType.add(resourceType);
             entityRepository.createOrUpdate(graphNode);
@@ -102,16 +102,16 @@ public class AEMVisualationGenerator implements VisualisationGenerator {
         }
     }
 
-    private void addTemplate(Node currentNode, PageContent graphNode, AbstractEntityRepository entityRepository) {
+    private void addTemplate(final Node currentNode, final PageContent graphNode, final AbstractEntityRepository entityRepository) {
         try {
-            if(!currentNode.hasProperty(CQ_TEMPLATE)){
+            if (!currentNode.hasProperty(CQ_TEMPLATE)) {
                 return;
             }
             AbstractEntityRepository componentRepository = EntityRespositoryFactory.createEntityRepository(EntityFactory.NT_UNSTRUCTURED, "");
             Property property = currentNode.getProperty(EntityFactory.SLING_RESOURCE_TYPE);
-            Component resourceType = (Component)componentRepository.find(property.getString());
-            if(resourceType==null){
-                resourceType = (Component)componentRepository.createOrUpdate(new Component(property.getString()));
+            Component resourceType = (Component) componentRepository.find(property.getString());
+            if (resourceType == null) {
+                resourceType = (Component) componentRepository.createOrUpdate(new Component(property.getString()));
             }
             graphNode.isTemplateOf.add(resourceType);
             entityRepository.createOrUpdate(graphNode);

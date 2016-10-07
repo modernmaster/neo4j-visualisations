@@ -5,6 +5,6 @@ import javax.jcr.RepositoryException;
 
 public interface ContentRepository {
 
-    public void createSession() throws RepositoryException;
-    public Node getNode(String path) throws RepositoryException;
+    void createSession() throws RepositoryException;
+    Node getNode(String path) throws RepositoryException;
 }
