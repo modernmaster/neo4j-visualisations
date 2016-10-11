@@ -3,6 +3,8 @@ env:
   global:
   - secure: L56SIMetEpiFWTI+lS2eu9DQ0xVNZJQ82hOqMOpqpEHOX438hXE5FrZIWemVlRZv75neR6cpJORpP8dbBVVfTnNEQQLSLLhBJQgZueJtM+V0M3rK1TqJM7FE/Q64tsVc/OBlTibQRU5dX1e8rQwYVxulf0F+JmGFRAqJZ+fYu5EI7tpOaFya+W9rG1j9kQya1mdvInL+XbLvCK2G88yVPlHRdXGKUhVJ11+++iWEODuoIxgpejAQ+Yst9/jCRdHmFXpO0/KLo015kx9txKtgSOctIg3gAAa+Qlxx1lcMpbYQR25kutUrmK5Zjqwfa0XCwYg50nMtvI3QncSvZNSG9rtHzDtU9hXdOX87e4/ymSdJtxbszao9m2SU9GP6f7hz5UFetUvPYYRlIadvHdPEL55EFTNFJ3Mtlt3HPpir7y1fd8p+GKba725a+hd28AcQF+l/ZYDdT3YXbR6Aukj/x1hydMCM9Thv7J71/GnQ1nM3f7+T9eGffyKgauS6zwT/SD+yKPa9uQSMICGr4aBTiKpq6GVjfgKyhziHuRUWDwVv62/OaNIonxCbT72pqooAal9ZkJrdxWy90vZiI0YvCGJ62h9MUhq52tlmcThdLjBJ4zCdT0WohXf6R2ufO7w3RIKGa9zOKoFjmFKZxtYG0uCPV1DEbb8MPuywd1Lj7+U=
   - secure: M17YPsQidJR6jokEC6CC/W48ugBI8lBmuIyYx7Yucx3DeP6M+dokACIXm35L7pbUkHnkA4/in0J2vqYea6p4KV6ZpTMPzl4L5kxuohoDSh6wVwMCk+ROPQbrsq82tJHAl643uYO+VsNIk+OdFZ5uoBHUfCpRyxBkv2KuXzDfTtK1iEaJ0xi8heIqcFTqVCIe/VoSQN6gjl8ipTtx7ILtJw9wzRmbJd3Kq0TJh6bAj7FtP1k8uzW46TtwaJKYzUYgMp6Vb/cbuzcd9whIEM/ul32g8xz6x3Kozph4uKLsoa6+eDU/liQLO1a2poi8OyG9TzU0h2PrH0R2m+nhxo4QHKIVeAQqzDnXqdyc0cRcdqyaC7jxwlnOKfJsKN7zjj1wPD7bgt8rYH2wLf42y9C+0Mr0OpQpZFmclIt8m6eKw0Ol9kSOOGWBeIb9yJa6sjtTxobNvYrTMhZAbDmy5Byo84P5Aw7asaWbz2hyC7K680tHXv5WkZxd6Qm/9wi+VXTqVoBsyuoC2N7IBsOHAwqVbmBnBsqDN3uCku9cZdwCDKBGRlIGOYl/6kNF2hYK9KRyNrDC41W3S86GUIHlst13g51mW3s5W1jTjdmAHi0hQYluX7MlIneb/ZLu8lhrBzyEignpbosO2zHJSeXu5ETP9tmpKGa4dhxkwIC6pPo84OE=
+  - secure: HulbghLfvYsgiPAebibs6bO7EGEQ8AnCoN/0/reNLNZDZBpNggLuhKr/IBa03lrb0ENh9fwuSzutDawK/giT/G3LlWXoe4zHO0qpf70JpzIQ28dZcpGsDQ5WYQ00u376UVsM5i9NdkPju/k0ZUk7uz6fNIDv+MMCff51QS/6XFORM6Tcm8QCvhCj/MMO79nxoRYePIRokk3xNQE/yevi3uNJUA/EFnnpk8keOMTh0V5fUpwxby/TeshPWmH/YBXSgEQIMRP2cb4wVRyk+5foGRfk7l+HkuJy1ruFEBOmvdjKGiHTpIM38E8EYHx3o5/qxQARyATE1M1BsXsEtT+bAbMwzCaPLArhC8KnmavPkbnj6LlGdfv8VXEyZ3oojaJCxt0HnZPKZyI9B5pYabh3QMBLrmoYtTXYayjwXHtd2sCDMVWqA6N2PXfaI6oLWf/MKW87//AgJ47r+DD2qcVO4NNdJySfRf5aM5bN1UQF6ANFZbORvKOA8gUSAjKUnZ3DT5Ocba+KIVbeXsHTJ66ArFweoVeA24qrGZG/Tf2FtI+WLkPDWNDlpDguvStelZUYqb6D5A6UKWiyfiEEpLINnZoXDVsbnd7oSu+javWoatUcf80RQxTwbPXlyUAwRLRtAZl+usBCzGtFnEHZIfOyOjPhBKwdjvSOzRTJq0rXscY=
+  - secure: XESspwnJgivGH8f5j+NMOu21d4m45kx8cZwbEqFrRSfyl3n3e7cFNL41ZjPPMPSuLs5xXaxevz1uZ0onRpYPrJA9McMczGtDFF8cMVfBWKi0dJBM8Ytt+RPJXhX4AoC8hMXgI9Br+7gS9YkNjor/JYxHireR59kfLAWi3FRAqETaeoTODMdYnYE5OF4Qi1Io20EEETRJqdtZNb/Mrcl8S9fEgmp41yYDMKe+D74AtJFQzO13bSIPcudr8ZG3G0cWWZ/4aPUanuTgxJgSJAI9WqmkW2xS32mw8gwpej0L/U/hWLXzWDzMjGw3sNbVj3RgIuJMiFq4+EPec8X+CcqKPt3KzCDx5YxS00yiW3rm2UsDI4wrHxc6o6n/0UAPggPXHH4baliFMM3KkD/wrtbXRxhSJzzZqjJ0otcR+xi7CSzJbdV2C04YeDGh04pn3gnQ6dwccVgP6uQAWU0Xk5y77ugTU6hSt5x3uQx60mcEFcuysBxoyYmAJi6a/L9Gs51cOxzZAwfelzNRsg05auBZBR7JpdjcJJXKpi9fWyHhNIjQbC9MYlIhfH+BeCr/Kk2cjK5ExH8/A2JmkiyduEWqmY+IcTtV3ByKubBuNmSRRwFKizS9+z9q1QB11JUZ+9hV6CIAfyT6WNvkOQbxa9D6u1wlZ/Ac5jSJgzMinpK814Y=
 before_install:
   - echo -n | openssl s_client -connect scan.coverity.com:443 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' | sudo tee -a /etc/ssl/certs/ca-
 addons:
@@ -14,5 +16,12 @@ addons:
     build_command_prepend: mvn clean
     build_command: mvn -DskipTests=true compile
     branch_pattern: master
+before_script:
+- git config --global user.email "me@jamesmcguigan.co.uk"
+- git config --global user.name "modernmaster"
+- git config credential.helper "store --file=.git/credentials"
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+- git remote set-url origin https://modernmaster:${GH_TOKEN}@github.com/modernmaster/neo4j-visualisations.git
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+- 'if [[ "$TRAVIS_PULL_REQUEST" != "false" && "$TRAVIS_BRANCH" = "master" ]]; then bash ./deploy.sh; fi'
