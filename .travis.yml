@@ -17,7 +17,7 @@ addons:
     build_command: mvn -DskipTests=true compile
     branch_pattern: master
 node_js: 6.0.0
-install: npm install
+install: npm install robohydra
 before_script:
 - git config --global user.email "me@jamesmcguigan.co.uk"
 - git config --global user.name "modernmaster"
