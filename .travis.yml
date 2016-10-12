@@ -24,7 +24,6 @@ before_script:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git remote set-url origin https://modernmaster:${GH_TOKEN}@github.com/modernmaster/neo4j-visualisations.git
-script: npm test
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - 'if [[ "$TRAVIS_PULL_REQUEST" != "false" && "$TRAVIS_BRANCH" = "master" ]]; then bash ./deploy.sh; fi'
