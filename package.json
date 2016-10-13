@@ -1,0 +1,24 @@
+{
+  "name": "neo4j-visualisations",
+  "version": "1.0.0",
+  "description": "Neo4j visualisations",
+  "main": "index.js",
+  "dependencies": {
+    "forever": "^0.15.2",
+    "robohydra": "^0.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modernmaster/neo4j-visualisations.git"
+  },
+  "author": "James McGuigan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/modernmaster/neo4j-visualisations/issues"
+  },
+  "homepage": "https://github.com/modernmaster/neo4j-visualisations#readme"
+}

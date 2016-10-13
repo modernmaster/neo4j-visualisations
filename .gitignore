@@ -44,4 +44,5 @@ log/
 tmp/
 *.rdb
 logs/
+node_modules/
 RUNNING_PID
