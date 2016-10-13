@@ -24,7 +24,7 @@ before_script:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git remote set-url origin https://modernmaster:${GH_TOKEN}@github.com/modernmaster/neo4j-visualisations.git
-- node_modules/forever/bin/forever stop node_modules/robohydra/bin/robohydra.js config/robohydra.conf -I resources
+- node_modules/forever/bin/forever start node_modules/robohydra/bin/robohydra.js config/robohydra.conf -I resources
 after_script:
 - node_modules/forever/bin/forever stop node_modules/robohydra/bin/robohydra.js
 after_success:
