@@ -4,7 +4,7 @@ exports.getBodyParts = function(conf) {
     return {
         heads: [
             new RoboHydraHeadStatic({
-                path: '/foo',
+                path: "/foo",
                 content: {
                     "success": true,
                     "results": [

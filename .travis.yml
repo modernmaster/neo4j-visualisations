@@ -24,10 +24,9 @@ before_script:
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - git remote set-url origin https://modernmaster:${GH_TOKEN}@github.com/modernmaster/neo4j-visualisations.git
-- "sh -e /etc/init.d/xvfb start"
-- sleep 3 
-- node_modules/robohydra/bin/robohydra.js config/robohydra.conf -I resources
-- sleep 3 
+- node_modules/forever/bin/forever stop node_modules/robohydra/bin/robohydra.js config/robohydra.conf -I resources
+after_script:
+- node_modules/forever/bin/forever stop node_modules/robohydra/bin/robohydra.js
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - 'if [[ "$TRAVIS_PULL_REQUEST" != "false" && "$TRAVIS_BRANCH" = "master" ]]; then bash ./deploy.sh; fi'

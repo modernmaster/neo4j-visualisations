@@ -4,6 +4,7 @@
   "description": "Neo4j visualisations",
   "main": "index.js",
   "dependencies": {
+    "forever": "^0.15.2",
     "robohydra": "^0.6.4"
   },
   "devDependencies": {},
